@@ -77,3 +77,11 @@ git commit -m "Test pre-commit"`
 This time, the commit should go through without any issues, as black has already formatted the code and flake8 has verified its adherence to PEP8.
 
 That's it! You now have an automated workflow that checks your Python code before every commit. Adjust the .pre-commit-config.yaml file as necessary to add or remove hooks based on your project's needs.
+
+### In case you face issues
+
+Case Sensitivity: On some systems, filenames are case-sensitive. Ensure the filename is .pre-commit-config.yaml (all lowercase) and not something like .Pre-Commit-Config.yaml.
+
+Staging the File: Ensure you've added and committed .pre-commit-config.yaml. You can stage it with git add .pre-commit-config.yaml.
+
+Cache: Occasionally, a cache issue might be the culprit. Clearing the pre-commit cache might help. Run pre-commit clean.
