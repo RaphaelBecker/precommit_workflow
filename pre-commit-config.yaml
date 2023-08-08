@@ -1,0 +1,19 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.3.0 # Use the ref you want to point at
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/ambv/black
+    rev: stable # Use the version of black you want
+    hooks:
+      - id: black
+        language_version: python3.9 # This should match the version of python you're using
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.1.0 # Use the version of flake8 you want
+    hooks:
+      - id: flake8

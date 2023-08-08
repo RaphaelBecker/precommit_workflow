@@ -1,19 +1,22 @@
 # precommit_workflow
 
 ### Idea:
+
 Inspired by: https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/#:~:text=Before%20I%20commit%20my%20staged,necessary%20edits%20and%20commit%20again.
 
 ### 1. Initial Setup:
-Ensure you have a Python project to begin with. For this example, let's create a simple "Hello World" project in bash:
 
-`mkdir hello_world_project
-cd hello_world_project
-echo 'print("Hello, world!")' > hello.py`
+Ensure you have a Python project to begin with. For this example, let's create a simple "Hello World" project in bash in root of the project:
+
+`echo 'print("Hello, world!")' > hello.py`
 
 ### 2. Set Up a Virtual Environment (optional, but recommended) in bash:
 
-`python3 -m venv venv
-source venv/bin/activate  # On Windows, use: .\venv\Scripts\activate`
+`python3 -m venv venv`
+`# On Linux, use: source venv/bin/activate`  
+`# On Windows, use: .\venv\Scripts\activate`
+Update pip:
+`python -m pip install --upgrade pip`
 
 ### 3. Install Necessary Packages:
 
@@ -45,13 +48,15 @@ repos:
     hooks:
     -   id: flake8
 ```
-      
+
 ### 5. Initialize pre-commit:
+
 bash:
-`re-commit install`
+`pre-commit install`
 This command installs the pre-commit script alongside your git hooks.
 
 ### 6. Test:
+
 Let's intentionally introduce an error in our python file hello.py:
 `print(   "Hello, world!")`
 
@@ -63,6 +68,7 @@ git commit -m "Test pre-commit"`
 The pre-commit hook should kick in, and black will automatically format the code. After that, flake8 will check the formatted code against PEP8 standards.
 
 ### 7. Committing:
+
 If black makes changes, the commit will fail (this is expected). This is because the file has been changed by black after the commit was started. You'll need to re-add the files and commit again in bash:
 
 `git add hello.py
