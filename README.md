@@ -1,5 +1,7 @@
 # precommit_workflow
 
+### Idea:
+Inspired by: https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/#:~:text=Before%20I%20commit%20my%20staged,necessary%20edits%20and%20commit%20again.
 
 ### 1. Initial Setup:
 Ensure you have a Python project to begin with. For this example, let's create a simple "Hello World" project in bash:
