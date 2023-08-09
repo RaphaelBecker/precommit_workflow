@@ -22,6 +22,7 @@ Update pip:
 
 bash:
 `pip install pre-commit black flake8`
+`pip install -r requirements.txt`
 
 ### 4. Set Up pre-commit:
 
