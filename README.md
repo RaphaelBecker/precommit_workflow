@@ -12,7 +12,7 @@ Ensure you have a Python project to begin with. For this example, let's create a
 
 ### 2. Set Up a Virtual Environment (optional, but recommended) in bash:
 
-`python3 -m venv venv`
+`python -m venv venv`
 `# On Linux, use: source venv/bin/activate`  
 `# On Windows, use: .\venv\Scripts\activate`
 Update pip:
@@ -25,7 +25,7 @@ bash:
 
 ### 4. Set Up pre-commit:
 
-Create a `.pre-commit-config.yaml` file in the root directory of your project in yaml:
+Create a `.pre-commit-config.yaml` file in the root directory of your project in yaml: (DONT FORGET THE DOT!!)
 
 ```
 repos:
@@ -53,6 +53,7 @@ repos:
 
 bash:
 `pre-commit install`
+`pre-commit autoupdate`
 This command installs the pre-commit script alongside your git hooks.
 
 ### 6. Test:
@@ -84,4 +85,4 @@ Case Sensitivity: On some systems, filenames are case-sensitive. Ensure the file
 
 Staging the File: Ensure you've added and committed .pre-commit-config.yaml. You can stage it with git add .pre-commit-config.yaml.
 
-Cache: Occasionally, a cache issue might be the culprit. Clearing the pre-commit cache might help. Run pre-commit clean.
+Cache: Occasionally, a cache issue might be the culprit. Clearing the pre-commit cache might help. Run `pre-commit clean`.
